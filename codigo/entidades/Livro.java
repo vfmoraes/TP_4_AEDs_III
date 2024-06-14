@@ -6,6 +6,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.text.NumberFormat;
 
+import aeds3.Criptografia;
 import aeds3.Registro;
 
 public class Livro implements Registro {
@@ -15,7 +16,8 @@ public class Livro implements Registro {
   private String titulo;
   private float preco;
   private int idCategoria;
-
+  private String key = "S$YZ&33TsXBoBFmM55^2k@&3DrgJBNsw";
+  
   public Livro() {
     this(-1, "", "", 0F, -1);
   }
@@ -80,10 +82,13 @@ public class Livro implements Registro {
     dos.writeUTF(this.titulo);
     dos.writeFloat(this.preco);
     dos.writeInt(this.idCategoria);
-    return ba_out.toByteArray();
+    byte[] dados = ba_out.toByteArray();
+    byte[] dadosCriptografados = Criptografia.cifrar(dados, key);
+    return dadosCriptografados;
   }
 
   public void fromByteArray(byte[] ba) throws Exception {
+    ba = Criptografia.decifrar(ba, key);
     byte[] straux = new byte[13];
     ByteArrayInputStream ba_in = new ByteArrayInputStream(ba);
     DataInputStream dis = new DataInputStream(ba_in);
