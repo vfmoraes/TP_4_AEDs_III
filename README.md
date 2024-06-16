@@ -50,4 +50,4 @@ Repositório do Trabalho Prático IV de Algoritmos e Estrutura de Dados III
 
 #### - O trabalho é original e não a cópia de um trabalho de um colega?
 
-<pre> Sim, o trabalho foi implemetado usando código desenvolvido pelo grupo no TP2 (Listas Invertidas) e também da base do algoritmo LZW disponibilizada pelo Professor no Canvas. </pre>
+<pre> Sim, o trabalho foi implemetado usando código desenvolvido pelo grupo no TP3 (Backup compactado)</pre>
