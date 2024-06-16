@@ -111,7 +111,7 @@ public class Criptografia{
         byte[] result = new byte[byteArr.length];
 
         // Identificar ordem das colunas //
-        calculoPosicoes(posicoes, chave);
+        posicoes = calculoPosicoes(chave);
         
         // Preencher a coluna conforme a chave //
         int posArray = 0;
